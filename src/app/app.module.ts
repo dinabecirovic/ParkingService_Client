@@ -8,9 +8,10 @@ import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { UserNavbarComponent } from './user-navbar/user-navbar.component';
-import { LoginComponent } from './login/login/login.component';
 import { TicketListComponent } from './ticket-list/ticket-list.component';
 import { PenaltyComponent } from './penalty/penalty.component';
+import { RouterModule } from '@angular/router';
+import { LoginnComponent } from './loginn/loginn.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +22,15 @@ import { PenaltyComponent } from './penalty/penalty.component';
     UserNavbarComponent,
     TicketListComponent,
     PenaltyComponent,
-    LoginComponent,
+    LoginnComponent
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

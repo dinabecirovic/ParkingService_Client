@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +10,12 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  login(model: any): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/login`, model);
+  login(user: any) {
+    return this.http.post<any>(`https://localhost:5001/api/Auth/login`, user, {
+      "headers":new HttpHeaders()
+                .set("Content-type", "application/json")
+                .set("Access-Control-Allow-Origin", "*")
+    });
   }
 
   register_user(user: any) {

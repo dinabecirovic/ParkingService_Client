@@ -1,0 +1,106 @@
+<!-- HEADER -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="assets/img/logoo.png" class="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="/register">Registruj se</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/loginn">Prijavi se</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+<!-- HEADER END -->
+<!-- FORM -->
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+            <form #loginForm="ngForm"  (ngSubmit)="login()" autocomplete="off">
+                <h2 class="text-center text-primary">Prijava</h2>
+                <p id="inc" *ngIf="incorrect">Korisničko ime ili lozinka nije pravilno uneta</p>
+                <hr>
+               
+  
+                <!-- USER FORM -->
+                <div >
+                    <div class="mb-3">
+                        <input oninput="hide()" type="text" class="form-control" name="name" [(ngModel)]="userlog.username" #name="ngModel" placeholder="Korisničko ime" required>
+                        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+                            Korisnicko ime je obavezno.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input oninput="hide()" type="text" class="form-control" name="password" [(ngModel)]="userlog.password" #password="ngModel" placeholder="Lozinka" required>
+                        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+                            Lozinka je obavezna.
+                        </div>
+                    </div>
+                 
+                 
+                </div>
+  
+                <!-- CONTROLLER FORM 
+                <div *ngIf="model.role === 'controller'">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="name" [(ngModel)]="model.name" #name="ngModel" placeholder="Ime" required>
+                        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+                            Ime je obavezno.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="surname" [(ngModel)]="model.surname" #surname="ngModel" placeholder="Prezime" required>
+                        <div *ngIf="surname.invalid && (surname.dirty || surname.touched)" class="text-danger">
+                            Prezime je obavezno.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" placeholder="Email" required email>
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+                            <div *ngIf="email.errors?.['required']">Email adresa je obavezna.</div>
+                            <div *ngIf="email.errors?.['email']">Unesite ispravnu email adresu.</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="address" [(ngModel)]="model.address" #address="ngModel" placeholder="Adresa stanovanja" required>
+                        <div *ngIf="address.invalid && (address.dirty || address.touched)" class="text-danger">
+                            Adresa stanovanja je obavezna.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="phoneNumbers" [(ngModel)]="model.phoneNumbers" #phoneNumbers="ngModel" placeholder="Kontakt broj telefona" required>
+                        <div *ngIf="phoneNumbers.invalid && (phoneNumbers.dirty || phoneNumbers.touched)" class="text-danger">
+                            Kontakt brojevi telefona su obavezni.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" placeholder="Korisničko ime" required>
+                        <div *ngIf="username.invalid && (username.dirty || username.touched)" class="text-danger">
+                          Korisničko ime je obavezno.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" placeholder="Lozinka" required minlength="6">
+                        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+                            <div *ngIf="password.errors?.['required']">Lozinka je obavezna.</div>
+                            <div *ngIf="password.errors?.['minlength']">Lozinka mora imati najmanje 6 karaktera.</div>
+                        </div>
+                    </div>
+                </div>
+                -->
+                <div class="text-center">
+                    <button class="btn btn-success" type="submit" [disabled]="loginForm.invalid">Prijavi se</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- FORM END -->
