@@ -1,0 +1,56 @@
+<app-user-navbar></app-user-navbar>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="text-center mb-3">
+        <a href="javascript:void(0)" (click)="selectType('one-time')" [class.active]="selectedType === 'one-time'">Jednokratna karta</a> / 
+        <a href="javascript:void(0)" (click)="selectType('subscription')" [class.active]="selectedType === 'subscription'">Pretplatna karta</a>
+      </div>
+      
+      <!-- Jednokratne karte -->
+      <div *ngIf="selectedType === 'one-time'">
+        <div *ngFor="let ticket of tickets" class="card mb-3">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="ticketNumber">Broj Karte</label>
+              <input type="text" class="form-control" id="ticketNumber" [value]="ticket.number" disabled>
+            </div>
+            <div class="form-group">
+              <label for="zone">Zona u kojoj karta važi</label>
+              <input type="text" class="form-control" id="zone" [value]="ticket.zone" disabled>
+            </div>
+            <div class="form-group">
+              <label for="validityDate">Datum važenja karte</label>
+              <input type="date" class="form-control" id="validityDate" [value]="ticket.validityDate" disabled>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Pretplatne karte -->
+      <div *ngIf="selectedType === 'subscription'">
+        <div *ngFor="let ticket of subscriptionTickets" class="card mb-3">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="ticketNumber">Broj Karte</label>
+              <input type="text" class="form-control" id="ticketNumber" [value]="ticket.number" disabled>
+            </div>
+            <div class="form-group">
+              <label for="zone">Zona u kojoj karta važi</label>
+              <input type="text" class="form-control" id="zone" [value]="ticket.zone" disabled>
+            </div>
+            <div class="form-group">
+              <label for="validityPeriod">Period važenja karte</label>
+              <input type="text" class="form-control" id="validityPeriod" [value]="ticket.validityPeriod" disabled>
+            </div>
+            <div class="form-group">
+              <label for="vehicleReg">Registarski broj vozila</label>
+              <input type="text" class="form-control" id="vehicleReg" [value]="ticket.vehicleReg" disabled>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

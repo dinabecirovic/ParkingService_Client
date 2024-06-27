@@ -1,0 +1,20 @@
+<app-user-navbar></app-user-navbar>
+<div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Datum Kazne</th>
+          <th>Zona</th>
+          <th>Razlog</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let penalty of penalties">
+          <td>{{ penalty.date }}</td>
+          <td>{{ penalty.zone }}</td>
+          <td>{{ penalty.reason }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

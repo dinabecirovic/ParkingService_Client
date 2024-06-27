@@ -1,0 +1,17 @@
+.table {
+    margin-top: 20px;
+  }
+  
+.text-center {
+    margin-bottom: 20px;
+}
+
+td {
+    text-align: center;
+}
+
+th {
+    text-align: center;
+    color: #007bff;
+}
+  
