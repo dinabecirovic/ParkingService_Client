@@ -1,5 +1,5 @@
 <!-- HEADER -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
         <img src="assets/img/logoo.png" class="logo">
@@ -18,7 +18,7 @@
         </ul>
       </div>
     </div>
-</nav>
+</nav> -->
 <!-- HEADER END -->
 <!-- FORM -->
 <div class="container">
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <input oninput="hide()" type="text" class="form-control" name="password" [(ngModel)]="userlog.password" #password="ngModel" placeholder="Lozinka" required>
+                        <input oninput="hide()" type="password" class="form-control" name="password" [(ngModel)]="userlog.password" #password="ngModel" placeholder="Lozinka" required>
                         <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
                             Lozinka je obavezna.
                         </div>

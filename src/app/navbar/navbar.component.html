@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-white">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src="assets/img/logoo.png" class="logo">
@@ -7,14 +7,24 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
+        
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/register">Registruj se</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/login">Prijavi se</a>
-        </li>
+         <li class="nav-item">
+              <a class="nav-link" href="/register">Registruj se</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/login">Prijavi se</a>
+          </li>
+          <li> 
+          <a class="nav-link" routerLink="/ticket-list" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Moje Karte</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/penalty" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Kazna</a>
+          </li>
+          <li *ngIf="!s.get_role()" class="nav-item">
+              <a class="nav-link" href="#" (click)="logout()">Odjavi se</a>
+          </li>
       </ul>
     </div>
   </div>
-</nav>
+</nav> -->

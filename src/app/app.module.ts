@@ -12,6 +12,7 @@ import { TicketListComponent } from './ticket-list/ticket-list.component';
 import { PenaltyComponent } from './penalty/penalty.component';
 import { RouterModule } from '@angular/router';
 import { LoginnComponent } from './loginn/loginn.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LoginnComponent } from './loginn/loginn.component';
     UserNavbarComponent,
     TicketListComponent,
     PenaltyComponent,
-    LoginnComponent
+    LoginnComponent,
+    ErrorComponent
   
   ],
   imports: [

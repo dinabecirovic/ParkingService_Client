@@ -6,6 +6,7 @@ import { UserNavbarComponent } from './user-navbar/user-navbar.component';
 import { TicketListComponent } from './ticket-list/ticket-list.component';
 import { PenaltyComponent } from './penalty/penalty.component';
 import { LoginnComponent } from './loginn/loginn.component';
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'user-navbar', component: UserNavbarComponent },
   { path: 'ticket-list', component: TicketListComponent },
   { path: 'penalty', component: PenaltyComponent },
+  { path: 'error', component: ErrorComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

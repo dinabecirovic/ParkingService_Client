@@ -10,6 +10,18 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
+  get_role() {
+    return localStorage.getItem("role");
+  }
+  isLoggedIn(){
+    if(localStorage.getItem('token')) return true;
+    return false;
+  }
+  logout(){
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+  }
+
   login(user: any) {
     return this.http.post<any>(`https://localhost:5001/api/Auth/login`, user, {
       "headers":new HttpHeaders()

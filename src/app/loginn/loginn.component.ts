@@ -29,8 +29,9 @@ export class LoginnComponent {
   this.service.login(credentials).subscribe(res => {
     if(res && res.token){
       localStorage.setItem("token",res.token);
+      localStorage.setItem("role",res.user.role);
       console.log(res);
-      this.router.navigate(['register']); 
+      this.router.navigate(['']); 
 
       //this.router.navigate(["courses"]);
     }
