@@ -15,10 +15,14 @@
             <li *ngIf="!s.isLoggedIn()" class="nav-item">
                 <a class="nav-link" href="/login">Prijavi se</a>
             </li>
+            
             <li *ngIf="s.isLoggedIn()" class="nav-item">
                 <a class="nav-link" href="/login">Početna</a>
             </li>
             <!-- USER -->
+            <li *ngIf="s.get_role() == 'User'" class="nav-item">
+                <a class="nav-link" href="/mapszones">Pretraga mesta</a>
+            </li>
             <li *ngIf="s.get_role() == 'User'"> 
             <a  class="nav-link" routerLink="/ticket-list" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Moje Karte</a>
             </li>
