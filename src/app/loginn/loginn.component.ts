@@ -13,6 +13,7 @@ export class LoginnComponent {
     username: "",
     password: ""
   }
+  buttonText:string = "Prijavi se";
   incorrect:boolean = false;
   constructor(private service:AuthService,  private router:Router){
 
@@ -22,6 +23,7 @@ export class LoginnComponent {
   }
 
   login(){
+    this.buttonText = "Prijavljivanje...";
   let credentials = {
     "username":this.userlog.username,
     "password":this.userlog.password

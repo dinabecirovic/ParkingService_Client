@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'https://localhost:5001/api/Auth/register';
+  private baseUrl = 'http://localhost:5001/api/Auth/register';
 
   constructor(private http: HttpClient) {}
 
@@ -23,7 +23,7 @@ export class AuthService {
   }
 
   login(user: any) {
-    return this.http.post<any>(`https://localhost:5001/api/Auth/login`, user, {
+    return this.http.post<any>(`http://localhost:5001/api/Auth/login`, user, {
       "headers":new HttpHeaders()
                 .set("Content-type", "application/json")
                 .set("Access-Control-Allow-Origin", "*")

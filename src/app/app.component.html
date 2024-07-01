@@ -15,12 +15,42 @@
             <li *ngIf="!s.isLoggedIn()" class="nav-item">
                 <a class="nav-link" href="/login">Prijavi se</a>
             </li>
+            <li *ngIf="s.isLoggedIn()" class="nav-item">
+                <a class="nav-link" href="/login">Početna</a>
+            </li>
+            <!-- USER -->
             <li *ngIf="s.get_role() == 'User'"> 
             <a  class="nav-link" routerLink="/ticket-list" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Moje Karte</a>
             </li>
             <li *ngIf="s.get_role() == 'User'" class="nav-item">
                 <a class="nav-link" routerLink="/penalty" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Moje kazne</a>
             </li>
+            <!-- END USER -->
+
+            <!-- CONTROLLOR -->
+            <li *ngIf="s.get_role() == 'Controllor'" class="nav-item">
+                <a class="nav-link" routerLink="/penalty" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Kontrola parkinga</a>
+            </li>
+            <li *ngIf="s.get_role() == 'Controllor'" class="nav-item">
+                <a class="nav-link" routerLink="/penalty" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Izdate kazne</a>
+            </li>
+            <!-- END CONTROLLOR -->
+
+            <!-- ADMIN -->
+            <li *ngIf="s.get_role() == 'Admin'" class="nav-item">
+                <a class="nav-link" routerLink="/penalty" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Parking mesta</a>
+            </li>
+            <li *ngIf="s.get_role() == 'Admin'" class="nav-item">
+                <a class="nav-link" routerLink="/penalty" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Zone</a>
+            </li>
+            <li *ngIf="s.get_role() == 'Admin'" class="nav-item">
+                <a class="nav-link" routerLink="/penalty" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Kazne</a>
+            </li>
+            <li *ngIf="s.get_role() == 'Admin'" class="nav-item">
+                <a class="nav-link" routerLink="/penalty" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Statistika</a>
+            </li>
+            <!-- END ADMIN -->
+
             <li *ngIf="s.get_role()" class="nav-item">
                 <a id="logout" class="nav-link" href="#" (click)="logout()">Odjavi se</a>
             </li>
