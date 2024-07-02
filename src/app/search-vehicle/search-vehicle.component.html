@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>Pretraga po registarskom broju</h2>
+    <form (ngSubmit)="searchVehicle()">
+      <div class="form-group">
+        <label for="registrationNumber">Registarski broj:</label>
+        <input type="text" id="registrationNumber" [(ngModel)]="registrationNumber" name="registrationNumber" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Pretraži</button>
+    </form>
+    <div *ngIf="vehicleInfo">
+      <h3>Rezultati pretrage</h3>
+      <p>Vozilo: {{ vehicleInfo.registrationNumber }}</p>
+      <p>Karta: {{ vehicleInfo.hasTicket ? 'Ima kartu' : 'Nema kartu' }}</p>
+    </div>
+  </div>
+  
