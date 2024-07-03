@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Kazne</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Datum</th>
+          <th>Cena</th>
+          <th>Vozilo</th>
+          <th>Napomena</th>
+          <th>Razlog</th>
+          <th>Izmeni</th>
+          <th>Izbriši</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let penalty of penalties">
+          <td>{{ penalty.date }}</td>
+          <td>{{ penalty.amount }}</td>
+          <td>{{ penalty.vehicle }}</td>
+          <td>{{ penalty.note }}</td>
+          <td>{{ penalty.reason }}</td>
+          <td>
+            <button class="btn btn-warning btn-sm" (click)="editPenalty(penalty)">Izmeni</button>
+          </td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deletePenalty(penalty)">Izbriši</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

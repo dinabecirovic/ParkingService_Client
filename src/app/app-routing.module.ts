@@ -13,6 +13,7 @@ import { ControlEntryComponent } from './control-entry/control-entry.component';
 import { ParkingPlacesComponent } from './parking-places/parking-places.component';
 import { ControllersComponent } from './controllers/controllers.component';
 import { ZonesComponent } from './zones/zones.component';
+import { PenaltiesComponent } from './penalties/penalties.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'parking-places', component: ParkingPlacesComponent },
   { path: 'controllers', component: ControllersComponent },
   { path: 'zones', component: ZonesComponent },
+  { path: 'penalties', component: PenaltiesComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

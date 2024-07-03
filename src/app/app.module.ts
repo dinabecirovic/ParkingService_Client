@@ -19,6 +19,7 @@ import { ControlEntryComponent } from './control-entry/control-entry.component';
 import { ParkingPlacesComponent } from './parking-places/parking-places.component';
 import { ControllersComponent } from './controllers/controllers.component';
 import { ZonesComponent } from './zones/zones.component';
+import { PenaltiesComponent } from './penalties/penalties.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ZonesComponent } from './zones/zones.component';
     ControlEntryComponent,
     ParkingPlacesComponent,
     ControllersComponent,
-    ZonesComponent
+    ZonesComponent,
+    PenaltiesComponent
   
   ],
   imports: [
