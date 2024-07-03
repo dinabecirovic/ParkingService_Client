@@ -17,7 +17,6 @@ ngOnInit(): void {
 }
 ngAfterViewInit(): void {
    
-alert(history.state.zone)
    
   }
 }
