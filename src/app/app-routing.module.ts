@@ -9,7 +9,15 @@ import { LoginnComponent } from './loginn/loginn.component';
 import { ErrorComponent } from './error/error.component';
 import { MapszonesComponent } from './mapszones/mapszones.component';
 import { SearchVehicleComponent } from './search-vehicle/search-vehicle.component';
+<<<<<<< HEAD
 import { ZoneComponent } from './zone/zone.component';
+=======
+import { ControlEntryComponent } from './control-entry/control-entry.component';
+import { ParkingPlacesComponent } from './parking-places/parking-places.component';
+import { ControllersComponent } from './controllers/controllers.component';
+import { ZonesComponent } from './zones/zones.component';
+import { PenaltiesComponent } from './penalties/penalties.component'
+>>>>>>> 350070b1c78d18c72a77c322188f290ee7c5a184
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,6 +30,11 @@ const routes: Routes = [
   { path: 'zone/:id', component: ZoneComponent },
   { path: 'error', component: ErrorComponent },
   { path: 'search-vehicle', component: SearchVehicleComponent },
+  { path: 'control-entry', component: ControlEntryComponent },
+  { path: 'parking-places', component: ParkingPlacesComponent },
+  { path: 'controllers', component: ControllersComponent },
+  { path: 'zones', component: ZonesComponent },
+  { path: 'penalties', component: PenaltiesComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

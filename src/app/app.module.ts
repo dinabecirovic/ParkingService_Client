@@ -15,7 +15,15 @@ import { LoginnComponent } from './loginn/loginn.component';
 import { ErrorComponent } from './error/error.component';
 import { MapszonesComponent } from './mapszones/mapszones.component';
 import { SearchVehicleComponent } from './search-vehicle/search-vehicle.component';
+<<<<<<< HEAD
 import { ZoneComponent } from './zone/zone.component';
+=======
+import { ControlEntryComponent } from './control-entry/control-entry.component';
+import { ParkingPlacesComponent } from './parking-places/parking-places.component';
+import { ControllersComponent } from './controllers/controllers.component';
+import { ZonesComponent } from './zones/zones.component';
+import { PenaltiesComponent } from './penalties/penalties.component';
+>>>>>>> 350070b1c78d18c72a77c322188f290ee7c5a184
 
 @NgModule({
   declarations: [
@@ -30,7 +38,15 @@ import { ZoneComponent } from './zone/zone.component';
     ErrorComponent,
     MapszonesComponent,
     SearchVehicleComponent,
+<<<<<<< HEAD
     ZoneComponent
+=======
+    ControlEntryComponent,
+    ParkingPlacesComponent,
+    ControllersComponent,
+    ZonesComponent,
+    PenaltiesComponent
+>>>>>>> 350070b1c78d18c72a77c322188f290ee7c5a184
   
   ],
   imports: [

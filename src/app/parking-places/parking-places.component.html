@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Parking mesta</h2>
+    <button class="btn btn-primary mb-3" (click)="addParkingPlace()">Dodaj novo parking mesto</button>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Adresa</th>
+          <th>Zona</th>
+          <th>Izmeni</th>
+          <th>Izbriši</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let place of parkingPlaces">
+          <td>{{ place.address }}</td>
+          <td>{{ place.zone }}</td>
+          <td>
+            <button class="btn btn-warning btn-sm" (click)="editParkingPlace(place)">Izmeni</button>
+          </td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deleteParkingPlace(place)">Izbriši</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

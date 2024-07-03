@@ -1,37 +1,37 @@
 .card {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 15px;
-    margin-top: 30px;
-  }
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  margin-top: 30px;
+}
   
 .card-body {
-    padding: 10px;
+  padding: 10px;
 }
 
 .form-group {
-    margin-bottom: 20px;
-    font-size: 13px;
+  margin-bottom: 20px;
+  font-size: 13px;
 }
 input {
-    font-size: 10px;
-    margin-top: 5px;
+  font-size: 10px;
+  margin-top: 5px;
 }
 
 .text-center a {
-    cursor: pointer;
-    text-decoration: none;
-    color: black;
-  }
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
   
 .text-center a.active {
-    color:  #007bff;
-    margin-top: 20px;
-  }
+  color:  #007bff;
+  margin-top: 20px;
+}
   
 .text-center {
-    margin-bottom: 20px;
-    margin-top: 50px;
-  }
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
   
 
