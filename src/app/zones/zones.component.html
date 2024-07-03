@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Zone</h2>
+    <button class="btn btn-primary mb-3" (click)="addZone()">Dodaj novu zonu</button>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Naziv zone</th>
+          <th>Broj parking mesta</th>
+          <th>Izmeni</th>
+          <th>Izbriši</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let zone of zones">
+          <td>{{ zone.name }}</td>
+          <td>{{ zone.parkingPlaces }}</td>
+          <td>
+            <button class="btn btn-warning btn-sm" (click)="editZone(zone)">Izmeni</button>
+          </td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deleteZone(zone)">Izbriši</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
