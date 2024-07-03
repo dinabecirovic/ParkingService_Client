@@ -14,8 +14,12 @@ import { ControlEntryComponent } from './control-entry/control-entry.component';
 import { ParkingPlacesComponent } from './parking-places/parking-places.component';
 import { ControllersComponent } from './controllers/controllers.component';
 import { ZonesComponent } from './zones/zones.component';
+<<<<<<< HEAD
 import { PenaltiesComponent } from './penalties/penalties.component';
 import { ControllerPenaltiesComponent } from './controller-penalties/controller-penalties.component';
+=======
+import { PenaltiesComponent } from './penalties/penalties.component'
+>>>>>>> 02a71f9201aa168ebef77ae0200b14d805dd67c8
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

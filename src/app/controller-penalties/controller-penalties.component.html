@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Kazne kontrolera</h2>
+    <button class="btn btn-primary mb-3" (click)="addPenalty()">Dodaj novu kaznu</button>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Datum</th>
+          <th>Cena</th>
+          <th>Vozilo</th>
+          <th>Napomena</th>
+          <th>Razlog</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let penalty of penalties">
+          <td>{{ penalty.date }}</td>
+          <td>{{ penalty.amount }}</td>
+          <td>{{ penalty.vehicle }}</td>
+          <td>{{ penalty.note }}</td>
+          <td>{{ penalty.reason }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
