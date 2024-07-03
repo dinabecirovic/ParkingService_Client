@@ -14,6 +14,7 @@ import { ParkingPlacesComponent } from './parking-places/parking-places.componen
 import { ControllersComponent } from './controllers/controllers.component';
 import { ZonesComponent } from './zones/zones.component';
 import { PenaltiesComponent } from './penalties/penalties.component'
+import { ControllerPenaltiesComponent } from './controller-penalties/controller-penalties.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'controllers', component: ControllersComponent },
   { path: 'zones', component: ZonesComponent },
   { path: 'penalties', component: PenaltiesComponent },
+  { path: 'controller-penalties', component: ControllerPenaltiesComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
