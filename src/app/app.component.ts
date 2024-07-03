@@ -12,7 +12,7 @@ export class AppComponent {
   constructor(ss:AuthService){
   this.s = ss;
   }
-  title = 'nbp-1';
+  title = 'ParkEasy';
 
   logout(){
     this.s.logout();

@@ -24,3 +24,22 @@
   font-size: 30px;
   margin-left: 20px;
 }
+@media (max-width: 600px) {
+  .carousel-caption {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+  .carousel-item {
+    height: 300px;
+  }
+}
+
+@media (max-width: 300px) {
+  .carousel-caption {
+    font-size: 25px;
+    margin-left: 15px;
+  }
+  .carousel-item {
+    height: 450px;
+  }
+}
