@@ -15,6 +15,8 @@ import { LoginnComponent } from './loginn/loginn.component';
 import { ErrorComponent } from './error/error.component';
 import { MapszonesComponent } from './mapszones/mapszones.component';
 import { SearchVehicleComponent } from './search-vehicle/search-vehicle.component';
+import { ControlEntryComponent } from './control-entry/control-entry.component';
+import { ParkingPlacesComponent } from './parking-places/parking-places.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { SearchVehicleComponent } from './search-vehicle/search-vehicle.componen
     LoginnComponent,
     ErrorComponent,
     MapszonesComponent,
-    SearchVehicleComponent
+    SearchVehicleComponent,
+    ControlEntryComponent,
+    ParkingPlacesComponent
   
   ],
   imports: [

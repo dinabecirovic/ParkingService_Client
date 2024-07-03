@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>Kontrola vozila</h2>
+    <form (ngSubmit)="submitControlEntry()">
+      <div class="form-group">
+        <label for="parkingPlace">Parking mesto:</label>
+        <input type="text" id="parkingPlace" [(ngModel)]="controlEntry.parkingPlace" name="parkingPlace" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="controlTime">Vreme kontrole:</label>
+        <input type="datetime-local" id="controlTime" [(ngModel)]="controlEntry.controlTime" name="controlTime" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="registrationNumber">Registarski broj vozila:</label>
+        <input type="text" id="registrationNumber" [(ngModel)]="controlEntry.registrationNumber" name="registrationNumber" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="hasValidTicket">Ima li vozilo važeću kartu?</label>
+        <select id="hasValidTicket" [(ngModel)]="controlEntry.hasValidTicket" name="hasValidTicket" class="form-control" required>
+          <option [ngValue]="true">Da</option>
+          <option [ngValue]="false">Ne</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Sačuvaj</button>
+    </form>
+  </div>
+  
