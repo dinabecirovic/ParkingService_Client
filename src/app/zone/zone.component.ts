@@ -19,4 +19,7 @@ ngAfterViewInit(): void {
    
    
   }
+  reserve(){
+    
+  }
 }

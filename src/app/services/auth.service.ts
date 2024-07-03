@@ -7,6 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class AuthService {
   private baseUrl = 'http://localhost:5001/api/Auth/register';
+  private url2 = 'http://localhost:5001/vehicleofuser/';
 
   constructor(private http: HttpClient) {}
 
@@ -20,6 +21,7 @@ export class AuthService {
   logout(){
     localStorage.removeItem("token");
     localStorage.removeItem("role");
+    localStorage.removeItem("vehicle");
   }
 
   login(user: any) {
@@ -28,6 +30,10 @@ export class AuthService {
                 .set("Content-type", "application/json")
                 .set("Access-Control-Allow-Origin", "*")
     });
+  }
+
+  getVehicle(id:string){
+    return this.http.get(this.url2+id);
   }
 
   register_user(user: any) {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ParkingplacesService } from '../parkingplaces.service';
 
 @Component({
   selector: 'app-zones',
@@ -6,37 +7,68 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./zones.component.css']
 })
 export class ZonesComponent implements OnInit {
-  zones = [
-    { id: 1, name: 'Zona 1', parkingPlaces: 20 },
-  ];
-
-  constructor() {}
-
-  ngOnInit(): void {}
-
-  addZone() {
-    const name = prompt('Unesite naziv zone:');
-    const parkingPlaces = prompt('Unesite broj parking mesta u zoni:');
-    if (name && parkingPlaces) {
-      const newZone = { id: this.zones.length + 1, name, parkingPlaces: parseInt(parkingPlaces, 10) };
-      this.zones.push(newZone);
-    }
+  zones:any[] = [];
+  zone:any = {};
+  disp:boolean = false;
+  disp2:boolean = false;
+  zoneU:any = {
+  
+    name: "",
+    numberOfPlaces: 0
+  }
+  zoneNew:any = {
+  
+    name: "",
+    numberOfPlaces: 0
   }
 
-  editZone(zone: any) {
-    const name = prompt('Unesite novi naziv za zonu:', zone.name);
+  constructor(private service:ParkingplacesService) {}
+
+  ngOnInit(): void {this.getZones();}
+
+  add() {
+    
+    this.disp2 = true;
+  }
+  addZone(zone:any){
+    this.service.addZone(zone).subscribe(
+      res => console.log(res),
+      err => console.log(err)
+    )
+  }
+
+  editZone(id:number, zone: any) {
+    this.zone = zone;
+    this.disp = !this.disp;
+
+  /* const name = prompt('Unesite novi naziv za zonu:', zone.name);
     const parkingPlaces = prompt('Unesite novi broj parking mesta za zonu:', zone.parkingPlaces);
     if (name && parkingPlaces) {
       zone.name = name;
       zone.parkingPlaces = parseInt(parkingPlaces, 10);
-    }
+    }*/
+    
+  }
+  edit(id:number,zone:any){
+    this.service.updateZone(id,zone).subscribe(
+      res => {
+        console.log(res)
+      },
+      err => console.log(err)
+    )
   }
 
   deleteZone(zone: any) {
-    const index = this.zones.indexOf(zone);
-    if (index > -1) {
-      this.zones.splice(index, 1);
-    }
+    this.service.deleteZone(zone.id).subscribe(
+      res => console.log(res),
+      err => console.log(err)
+    );
+  }
+  getZones(){
+    this.service.getAllZones().subscribe(res => {
+      console.log(res);
+      this.zones = res;
+    }, err => console.log(err));
   }
 }
 

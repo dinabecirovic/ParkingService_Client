@@ -1,17 +1,81 @@
-.table {
+/* zone-details.component.css */
+.container {
     margin-top: 20px;
   }
   
-.text-center {
+  .table {
+    margin-top: 20px;
+  }
+  
+  .text-center {
     margin-bottom: 20px;
-}
-
-td {
+  }
+  
+  td {
     text-align: center;
-}
-
-th {
+  }
+  
+  th {
     text-align: center;
     color: #007bff;
-}
+  }
+  
+  .vehicle-info, .zone-details, .table-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .vehicle-info {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .vehicle-info h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .vehicle-info p {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+  
+  .zone-details h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .zone-details p.lead {
+    font-size: 1.2rem;
+  }
+  
+  .parking-list {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .parking-place h4 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  
+  .parking-place p {
+    font-size: 1rem;
+    color: #6c757d;
+  }
+  
+  .table-container {
+    margin-bottom: 20px;
+  }
+  
+  .table-striped thead th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
   

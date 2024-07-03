@@ -1,6 +1,6 @@
 <div class="container">
     <h2>Zone</h2>
-    <button class="btn btn-primary mb-3" (click)="addZone()">Dodaj novu zonu</button>
+    <button class="btn btn-primary mb-3" (click)="add()">Dodaj novu zonu</button>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -13,9 +13,9 @@
       <tbody>
         <tr *ngFor="let zone of zones">
           <td>{{ zone.name }}</td>
-          <td>{{ zone.parkingPlaces }}</td>
+          <td>{{ zone.numberOfPlaces }}</td>
           <td>
-            <button class="btn btn-warning btn-sm" (click)="editZone(zone)">Izmeni</button>
+            <button class="btn btn-warning btn-sm" (click)="editZone(zone.id,zone)">Izmeni</button>
           </td>
           <td>
             <button class="btn btn-danger btn-sm" (click)="deleteZone(zone)">Izbriši</button>
@@ -23,5 +23,39 @@
         </tr>
       </tbody>
     </table>
-  </div>
-  
+</div>
+
+
+<!-- zone-form.component.html -->
+<div class="container2" id="editcont" *ngIf="disp">
+  <h2>Izmena zone</h2>
+  <form #zoneForm="ngForm">
+    <div class="form-group">
+      <label for="name">Naziv zone:</label>
+      <input type="text" class="form-control" id="name" name="name" required
+             [(ngModel)]="zoneU.name" #name="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="numberOfPlaces">Broj parking mesta:</label>
+      <input type="number" class="form-control" id="numberOfPlaces" name="numberOfPlaces" required
+             [(ngModel)]="zoneU.numberOfPlaces" #numberOfPlaces="ngModel">
+    </div>
+    <button  class="btn btn-primary" (click)="edit(zone.id,zoneU)">Sačuvaj</button>
+  </form>
+</div>
+<div class="container2" id="editcont" *ngIf="disp2">
+  <h2>Unos zone</h2>
+  <form #zoneForm="ngForm">
+    <div class="form-group">
+      <label for="name">Naziv zone:</label>
+      <input type="text" class="form-control" id="name" name="name" required
+             [(ngModel)]="zoneNew.name" #name="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="numberOfPlaces">Broj parking mesta:</label>
+      <input type="number" class="form-control" id="numberOfPlaces" name="numberOfPlaces" required
+             [(ngModel)]="zoneNew.numberOfPlaces" #numberOfPlaces="ngModel">
+    </div>
+    <button  class="btn btn-primary" (click)="addZone(zoneNew)">Dodaj</button>
+  </form>
+</div>

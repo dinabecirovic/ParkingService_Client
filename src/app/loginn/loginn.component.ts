@@ -13,6 +13,7 @@ export class LoginnComponent {
     username: "",
     password: ""
   }
+  vehicle:any = {}
   buttonText:string = "Prijavi se";
   incorrect:boolean = false;
   constructor(private service:AuthService,  private router:Router){
@@ -34,7 +35,14 @@ export class LoginnComponent {
       localStorage.setItem("role",res.user.role);
       console.log(res);
       this.router.navigate(['']); 
-
+      
+      this.service.getVehicle(res.user.id).subscribe(
+        res => {
+          console.log(res)
+          localStorage.setItem("vehicle",JSON.stringify(res));
+        },
+        err => console.log(err)
+      )
       //this.router.navigate(["courses"]);
     }
 

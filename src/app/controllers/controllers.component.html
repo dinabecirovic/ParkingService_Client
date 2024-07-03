@@ -1,6 +1,6 @@
 <div class="container">
     <h2>Kontrolori</h2>
-    <button class="btn btn-primary mb-3" (click)="addController()">Dodaj novog kontrolora</button>
+    
     <table class="table table-striped">
       <thead>
         <tr>
@@ -8,19 +8,16 @@
           <th>Prezime kontrolora</th>
           <th>Broj telefona</th>
           <th>Email</th>
-          <th>Izmeni</th>
           <th>Izbriši</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let controller of controllers">
+        <tr *ngFor="let controller of controllors">
           <td>{{ controller.firstName }}</td>
           <td>{{ controller.lastName }}</td>
           <td>{{ controller.phoneNumber }}</td>
           <td>{{ controller.email }}</td>
-          <td>
-            <button class="btn btn-warning btn-sm" (click)="editController(controller)">Izmeni</button>
-          </td>
+          
           <td>
             <button class="btn btn-danger btn-sm" (click)="deleteController(controller)">Izbriši</button>
           </td>

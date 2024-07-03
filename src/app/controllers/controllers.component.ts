@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ControllorService } from '../controllor.service';
 
 @Component({
   selector: 'app-controllers',
@@ -10,10 +11,14 @@ export class ControllersComponent implements OnInit {
     { id: 1, firstName: 'Kontrolor', lastName: '1', phoneNumber: '0601234567', email: 'someone@example.com' },
     { id: 2, firstName: 'Kontrolor', lastName: '2', phoneNumber: '0612345678', email: 'someone@example.com' }
   ];
+  controllors: any = [];
 
-  constructor() {}
+  constructor(private service:ControllorService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+    this.getControllors();
+  }
 
   addController() {
     const firstName = prompt('Unesite ime kontrolora:');
@@ -44,5 +49,13 @@ export class ControllersComponent implements OnInit {
     if (index > -1) {
       this.controllers.splice(index, 1);
     }
+  }
+
+  getControllors(){
+    this.service.getControllorss().subscribe(res => {
+      console.log(res);
+      this.controllors = res;
+    },
+    err => console.log(err))
   }
 }

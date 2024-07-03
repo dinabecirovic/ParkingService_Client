@@ -21,11 +21,8 @@ import { ParkingPlacesComponent } from './parking-places/parking-places.componen
 import { ControllersComponent } from './controllers/controllers.component';
 import { ZonesComponent } from './zones/zones.component';
 import { PenaltiesComponent } from './penalties/penalties.component';
-<<<<<<< HEAD
 import { ControllerPenaltiesComponent } from './controller-penalties/controller-penalties.component';
 
-=======
->>>>>>> 02a71f9201aa168ebef77ae0200b14d805dd67c8
 
 @NgModule({
   declarations: [
@@ -45,13 +42,10 @@ import { ControllerPenaltiesComponent } from './controller-penalties/controller-
     ParkingPlacesComponent,
     ControllersComponent,
     ZonesComponent,
-<<<<<<< HEAD
     PenaltiesComponent,
     ControllerPenaltiesComponent,
-=======
     PenaltiesComponent
   
->>>>>>> 02a71f9201aa168ebef77ae0200b14d805dd67c8
   ],
   imports: [
     BrowserModule,

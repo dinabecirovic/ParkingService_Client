@@ -1,16 +1,18 @@
-<div class="zone-details">
+<!-- zone-details.component.html -->
+<div class="container mt-5">
+  <div class="zone-details text-center">
     <h2>{{ zone.name }}</h2>
-    <p>Broj parking mesta: {{ zone.numberOfPlaces }}</p>
+    <p class="lead">Broj parking mesta: {{ zone.numberOfPlaces }}</p>
   
-    <h3>Parking mesta:</h3>
-    <ul class="parking-list">
-      <li *ngFor="let place of zone.parkingPlaces">
+    <h3 class="mt-4">Parking mesta:</h3>
+    <ul class="list-group parking-list mt-3">
+      <li *ngFor="let place of zone.parkingPlaces" class="list-group-item">
         <div class="parking-place">
           <h4>{{ place.name }}</h4>
-          <!-- <p>{{ place.description }}</p> -->
           <p>{{place.street}}</p>
+          <p><button class="btn btn-primary mb-3" (click)="reserve()">Rezervisi</button></p>
         </div>
       </li>
     </ul>
   </div>
-  
+</div>

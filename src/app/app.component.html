@@ -41,11 +41,14 @@
             <!-- END CONTROLLOR -->
 
             <!-- ADMIN -->
+            <li  class="nav-item">
+                <a class="nav-link" routerLink="/controllers" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Kontrolori</a>
+            </li>
             <li *ngIf="s.get_role() == 'Admin'" class="nav-item">
                 <a class="nav-link" routerLink="/penalty" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Parking mesta</a>
             </li>
-            <li *ngIf="s.get_role() == 'Admin'" class="nav-item">
-                <a class="nav-link" routerLink="/penalty" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Zone</a>
+            <li  class="nav-item">
+                <a class="nav-link" routerLink="/zones" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Zone</a>
             </li>
             <li *ngIf="s.get_role() == 'Admin'" class="nav-item">
                 <a class="nav-link" routerLink="/penalty" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Kazne</a>

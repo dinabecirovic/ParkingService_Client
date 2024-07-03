@@ -1,19 +1,31 @@
-<div class="container">
+<!-- zone-details.component.html -->
+<div class="container mt-5">
+  <!-- Vehicle Info -->
+  <div class="vehicle-info mb-5">
+    <h2>Podaci o mom vozilu</h2>
+    <p><strong>Registracija:</strong> {{ vehicle.regNumber }}</p>
+    <p><strong>Marka:</strong> {{ vehicle.mark }}</p>
+    <p><strong>Naziv:</strong> {{ vehicle.name }}</p>
+  </div>
+
+  <!-- Penalties Table -->
+  <div class="container mb-5">
     <table class="table table-striped">
       <thead>
         <tr>
           <th>Datum Kazne</th>
-          <th>Zona</th>
           <th>Razlog</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let penalty of penalties">
-          <td>{{ penalty.date }}</td>
-          <td>{{ penalty.zone }}</td>
-          <td>{{ penalty.reason }}</td>
+          <td>{{ penalty.dateTime }}</td>
+          <td>{{ penalty.why }}</td>
         </tr>
       </tbody>
     </table>
   </div>
+
+  <!-- Zone Details -->
   
+</div>
