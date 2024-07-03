@@ -15,6 +15,7 @@ import { LoginnComponent } from './loginn/loginn.component';
 import { ErrorComponent } from './error/error.component';
 import { MapszonesComponent } from './mapszones/mapszones.component';
 import { SearchVehicleComponent } from './search-vehicle/search-vehicle.component';
+import { ZoneComponent } from './zone/zone.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SearchVehicleComponent } from './search-vehicle/search-vehicle.componen
     LoginnComponent,
     ErrorComponent,
     MapszonesComponent,
-    SearchVehicleComponent
+    SearchVehicleComponent,
+    ZoneComponent
   
   ],
   imports: [

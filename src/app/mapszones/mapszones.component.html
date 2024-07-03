@@ -1,12 +1,26 @@
 <div id="mapszones">
     <div id="search">
         <div>
-            <select name="zonename" id="zonename" >
-                <option value="Zone" >Zone1</option>
-                <option value="Zone1" >Zone2</option>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Zona</th>
+                        <th>Ukupno mesta</th>
+                        <th>Slobodnih mesta</th>
+                      
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of zones" >
+                        <td scope="row">{{item.name}}</td>
+                        <td scope="row">{{item.numberOfPlaces}}</td>
+                        <td scope="row">{{item.numberOfPlaces - item.parkingPlaces.length}}</td>
+                        <td  scope="row"><button (click)='search(item,item.id)'>Pretraga</button></td>
+                       
+                    </tr>
                 
-            </select>
-            <button>Pretraga</button>
+                </tbody>
+            </table>
         </div>
     </div>
     <div class="map-container">

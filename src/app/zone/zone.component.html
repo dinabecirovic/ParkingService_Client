@@ -1,0 +1,16 @@
+<div class="zone-details">
+    <h2>{{ zone.name }}</h2>
+    <p>Broj parking mesta: {{ zone.numberOfPlaces }}</p>
+  
+    <h3>Parking mesta:</h3>
+    <ul class="parking-list">
+      <li *ngFor="let place of zone.parkingPlaces">
+        <div class="parking-place">
+          <h4>{{ place.name }}</h4>
+          <!-- <p>{{ place.description }}</p> -->
+          <p>{{place.street}}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  

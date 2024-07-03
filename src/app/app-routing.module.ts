@@ -9,6 +9,7 @@ import { LoginnComponent } from './loginn/loginn.component';
 import { ErrorComponent } from './error/error.component';
 import { MapszonesComponent } from './mapszones/mapszones.component';
 import { SearchVehicleComponent } from './search-vehicle/search-vehicle.component';
+import { ZoneComponent } from './zone/zone.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'ticket-list', component: TicketListComponent },
   { path: 'penalty', component: PenaltyComponent },
   { path: 'mapszones', component: MapszonesComponent },
+  { path: 'zone/:id', component: ZoneComponent },
   { path: 'error', component: ErrorComponent },
   { path: 'search-vehicle', component: SearchVehicleComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
