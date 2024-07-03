@@ -9,11 +9,12 @@ import { LoginnComponent } from './loginn/loginn.component';
 import { ErrorComponent } from './error/error.component';
 import { MapszonesComponent } from './mapszones/mapszones.component';
 import { SearchVehicleComponent } from './search-vehicle/search-vehicle.component';
+import { ZoneComponent } from './zone/zone.component';
 import { ControlEntryComponent } from './control-entry/control-entry.component';
 import { ParkingPlacesComponent } from './parking-places/parking-places.component';
 import { ControllersComponent } from './controllers/controllers.component';
 import { ZonesComponent } from './zones/zones.component';
-import { PenaltiesComponent } from './penalties/penalties.component'
+import { PenaltiesComponent } from './penalties/penalties.component';
 import { ControllerPenaltiesComponent } from './controller-penalties/controller-penalties.component';
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'ticket-list', component: TicketListComponent },
   { path: 'penalty', component: PenaltyComponent },
   { path: 'mapszones', component: MapszonesComponent },
+  { path: 'zone/:id', component: ZoneComponent },
   { path: 'error', component: ErrorComponent },
   { path: 'search-vehicle', component: SearchVehicleComponent },
   { path: 'control-entry', component: ControlEntryComponent },

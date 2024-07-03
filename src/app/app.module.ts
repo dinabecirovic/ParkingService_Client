@@ -15,12 +15,14 @@ import { LoginnComponent } from './loginn/loginn.component';
 import { ErrorComponent } from './error/error.component';
 import { MapszonesComponent } from './mapszones/mapszones.component';
 import { SearchVehicleComponent } from './search-vehicle/search-vehicle.component';
+import { ZoneComponent } from './zone/zone.component';
 import { ControlEntryComponent } from './control-entry/control-entry.component';
 import { ParkingPlacesComponent } from './parking-places/parking-places.component';
 import { ControllersComponent } from './controllers/controllers.component';
 import { ZonesComponent } from './zones/zones.component';
 import { PenaltiesComponent } from './penalties/penalties.component';
 import { ControllerPenaltiesComponent } from './controller-penalties/controller-penalties.component';
+
 
 @NgModule({
   declarations: [
@@ -35,13 +37,13 @@ import { ControllerPenaltiesComponent } from './controller-penalties/controller-
     ErrorComponent,
     MapszonesComponent,
     SearchVehicleComponent,
+    ZoneComponent,
     ControlEntryComponent,
     ParkingPlacesComponent,
     ControllersComponent,
     ZonesComponent,
     PenaltiesComponent,
-    ControllerPenaltiesComponent
-  
+    ControllerPenaltiesComponent,
   ],
   imports: [
     BrowserModule,
