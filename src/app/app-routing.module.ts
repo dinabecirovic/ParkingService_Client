@@ -11,6 +11,7 @@ import { MapszonesComponent } from './mapszones/mapszones.component';
 import { SearchVehicleComponent } from './search-vehicle/search-vehicle.component';
 import { ControlEntryComponent } from './control-entry/control-entry.component';
 import { ParkingPlacesComponent } from './parking-places/parking-places.component';
+import { ControllersComponent } from './controllers/controllers.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'search-vehicle', component: SearchVehicleComponent },
   { path: 'control-entry', component: ControlEntryComponent },
   { path: 'parking-places', component: ParkingPlacesComponent },
+  { path: 'controllers', component: ControllersComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

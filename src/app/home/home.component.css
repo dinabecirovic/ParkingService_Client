@@ -1,22 +1,21 @@
 .background-container {
-    background-image: url('../../assets/img/home.png');
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
+  background-image: url('../../assets/img/home.png');
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
   
-  .content {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-  }
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
   
-  .btn {
-    margin-top: 20px;
-  }
+.btn {
+  margin-top: 20px;
+}
   

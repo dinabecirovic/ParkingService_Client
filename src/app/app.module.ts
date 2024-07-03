@@ -17,6 +17,7 @@ import { MapszonesComponent } from './mapszones/mapszones.component';
 import { SearchVehicleComponent } from './search-vehicle/search-vehicle.component';
 import { ControlEntryComponent } from './control-entry/control-entry.component';
 import { ParkingPlacesComponent } from './parking-places/parking-places.component';
+import { ControllersComponent } from './controllers/controllers.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ParkingPlacesComponent } from './parking-places/parking-places.componen
     MapszonesComponent,
     SearchVehicleComponent,
     ControlEntryComponent,
-    ParkingPlacesComponent
+    ParkingPlacesComponent,
+    ControllersComponent
   
   ],
   imports: [
