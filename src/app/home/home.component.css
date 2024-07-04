@@ -1,21 +1,45 @@
-.background-container {
-  background-image: url('../../assets/img/home.png');
-  background-position: center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.container {
+  max-width: 100%;
 }
-  
-.content {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
+
+.carousel-item {
+  height: 600px; 
+  position: relative;
 }
-  
-.btn {
-  margin-top: 20px;
+
+.carousel-item img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  filter: blur(4px);
 }
-  
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #ffffff;
+  text-align: left;
+  font-size: 30px;
+  margin-left: 20px;
+}
+@media (max-width: 600px) {
+  .carousel-caption {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+  .carousel-item {
+    height: 300px;
+  }
+}
+
+@media (max-width: 300px) {
+  .carousel-caption {
+    font-size: 25px;
+    margin-left: 15px;
+  }
+  .carousel-item {
+    height: 450px;
+  }
+}
