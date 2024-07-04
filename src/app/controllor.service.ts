@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ControllorService {
-   url = 'http://localhost:5001/api/Users/get-all-controllors';
+   url = 'http://benjaminramovic-001-site1.htempurl.com/api/Users/get-all-controllors';
 
   constructor(private http:HttpClient) { }
 

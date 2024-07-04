@@ -6,8 +6,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:5001/api/Auth/register';
-  private url2 = 'http://localhost:5001/vehicleofuser/';
+  private baseUrl = 'http://benjaminramovic-001-site1.htempurl.com/api/Auth/register';
+  private url2 = 'http://benjaminramovic-001-site1.htempurl.com/vehicleofuser/';
 
   constructor(private http: HttpClient) {}
 
@@ -25,7 +25,7 @@ export class AuthService {
   }
 
   login(user: any) {
-    return this.http.post<any>(`http://localhost:5001/api/Auth/login`, user, {
+    return this.http.post<any>(`http://benjaminramovic-001-site1.htempurl.com/api/Auth/login`, user, {
       "headers":new HttpHeaders()
                 .set("Content-type", "application/json")
                 .set("Access-Control-Allow-Origin", "*")
@@ -37,7 +37,7 @@ export class AuthService {
   }
 
   register_user(user: any) {
-    return this.http.post<any>(`https://localhost:5001/api/Auth/register`, user, {
+    return this.http.post<any>(`http://benjaminramovic-001-site1.htempurl.com/api/Auth/register`, user, {
       "headers":new HttpHeaders()
                 .set("Content-type", "application/json")
                 .set("Access-Control-Allow-Origin", "*")
