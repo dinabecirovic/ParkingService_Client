@@ -10,7 +10,10 @@
 
   <!-- Penalties Table -->
   <div class="container mb-5">
-    <table class="table table-striped">
+
+    <h3 *ngIf="penalties.length == 0">Nema napisanih kazni za vozilo.</h3>
+    
+    <table *ngIf="penalties.length != 0" class="table table-striped">
       <thead>
         <tr>
           <th>Datum Kazne</th>

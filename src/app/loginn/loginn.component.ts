@@ -33,6 +33,14 @@ export class LoginnComponent {
     if(res && res.token){
       localStorage.setItem("token",res.token);
       localStorage.setItem("role",res.user.role);
+      this.service.getVehicleOfUser(res.user.id).subscribe(
+        res => {
+          console.log(res)
+          localStorage.setItem("vid",res.id)
+        },err => {
+          console.log(err)
+        }
+      )
       console.log(res);
       this.router.navigate(['']); 
       

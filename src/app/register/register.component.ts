@@ -18,7 +18,8 @@ export class RegisterComponent {
     phone:"",
     address:"",
     username:"",
-    password:""
+    password:"",
+    role:""
   }
 
   constructor(private service: AuthService, private router: Router) {}
@@ -26,17 +27,18 @@ export class RegisterComponent {
   ngOnInit(): void {}
 
   register() {
-    this.router.navigate(['/login']);
-   /* if (this.registerForm.valid) {
+    //alert(this.user.role)
+    //alert("aaa")
+    if (this.registerForm.valid) {
       console.log(this.user);
       this.service.register_user(this.user).subscribe(res => {
         console.log(res);
-        this.router.navigate(['/login']);
+
       },
     error => console.log(error));
     this.router.navigate(['/login']);
     } else {
       console.log("Form is invalid");
-    }*/
+    }
   }
 }

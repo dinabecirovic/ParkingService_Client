@@ -6,10 +6,10 @@ import { Injectable } from '@angular/core';
 })
 export class ParkingplacesService {
 
-private url = 'http://benjaminramovic-001-site1.htempurl.com/ParkingPlaces'
+private url = 'http://localhost:5001/api/ParkingPlaces'
 //private url2 = 'http://localhost:5001/api/Zone'
-private url2 = 'http://benjaminramovic-001-site1.htempurl.com/api/Zone'
-private url3 = 'http://benjaminramovic-001-site1.htempurl.com/myPenalties/'
+private url2 = 'http://localhost:5001/api/Zone'
+private url3 = 'http://localhost:5001/myPenalties'
   constructor(private http:HttpClient) { }
   getAllParkings(){
     return this.http.get<any>(this.url);
@@ -22,7 +22,7 @@ private url3 = 'http://benjaminramovic-001-site1.htempurl.com/myPenalties/'
     })
   }
   getPenalties(id:number){
-    return this.http.get<any>(this.url3+id);
+    return this.http.get<any>(this.url3+'/'+id);
   }
   getAllZones(){
     return this.http.get<any>(this.url2);

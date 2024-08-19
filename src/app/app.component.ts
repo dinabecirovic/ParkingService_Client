@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { VehicleService } from './services/vehicle.service';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +8,22 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
  s:AuthService;
-  constructor(ss:AuthService){
+  constructor(ss:AuthService, private vs:VehicleService){
   this.s = ss;
   }
   title = 'ParkEasy';
+  
 
+  ngOnInit(): void {
+      if(localStorage.getItem("id")!= null) {
+        
+      }
+        
+  }
   logout(){
     this.s.logout();
   }
+  
 }

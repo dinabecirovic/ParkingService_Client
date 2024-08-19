@@ -28,9 +28,9 @@
                 <h2 class="text-center text-primary">Registacija</h2>
                 <hr>
                 <div class="mb-3">
-                    <select id="role" class="form-select form-select-lg mb-3" name="role" required>
-                    <option value="user" selected>Korisnik</option>
-                    <option value="controller">Kontrolor</option>
+                    <select [(ngModel)]="user.role" id="role" class="form-select form-select-lg mb-3" name="role" required>
+                    <option  value="user" selected>Korisnik</option>
+                    <option  value="controller">Kontrolor</option>
                     </select>
                     
                 </div>

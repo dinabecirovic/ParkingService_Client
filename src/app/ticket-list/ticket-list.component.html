@@ -7,49 +7,58 @@
         <a href="javascript:void(0)" (click)="selectType('subscription')" [class.active]="selectedType === 'subscription'">Pretplatna karta</a>
       </div>
       
+      
       <!-- Jednokratne karte -->
       <div *ngIf="selectedType === 'one-time'">
+        <div *ngIf="tickets.length == 0">
+          <h3>Nema jednokratnih karti za vozilo.</h3>
+        </div>
+      <div *ngIf="tickets.length != 0">
+
         <div *ngFor="let ticket of tickets" class="card mb-3">
           <div class="card-body">
             <div class="form-group">
               <label for="ticketNumber">Broj Karte</label>
-              <input type="text" class="form-control" id="ticketNumber" [value]="ticket.number" disabled>
+              <!-- <input type="text" class="form-control" id="ticketNumber" [value]="ticket.id" disabled> -->
+              <p [(ngModel)]="ticket.id"></p>
             </div>
-            <div class="form-group">
-              <label for="zone">Zona u kojoj karta važi</label>
-              <input type="text" class="form-control" id="zone" [value]="ticket.zone" disabled>
-            </div>
+            
             <div class="form-group">
               <label for="validityDate">Datum važenja karte</label>
-              <input type="date" class="form-control" id="validityDate" [value]="ticket.validityDate" disabled>
+              <!-- <input type="date" class="form-control" id="validityDate" [value]="ticket.validityDate" disabled> -->
             </div>
           </div>
         </div>
       </div>
+    </div>
       
       <!-- Pretplatne karte -->
+      
+      
       <div *ngIf="selectedType === 'subscription'">
+          <div *ngIf="subscriptionTickets.length == 0">
+            <h3>Nema pretplatnih karti za vozilo.</h3>
+          </div>
+        <div *ngIf="subscriptionTickets.length != 0"></div>
         <div *ngFor="let ticket of subscriptionTickets" class="card mb-3">
           <div class="card-body">
             <div class="form-group">
               <label for="ticketNumber">Broj Karte</label>
-              <input type="text" class="form-control" id="ticketNumber" [value]="ticket.number" disabled>
+              <input type="text" class="form-control" id="ticketNumber" [(ngModel)]="ticket.id" disabled>
             </div>
-            <div class="form-group">
-              <label for="zone">Zona u kojoj karta važi</label>
-              <input type="text" class="form-control" id="zone" [value]="ticket.zone" disabled>
-            </div>
-            <div class="form-group">
+            
+            <!-- <div class="form-group">
               <label for="validityPeriod">Period važenja karte</label>
               <input type="text" class="form-control" id="validityPeriod" [value]="ticket.validityPeriod" disabled>
             </div>
             <div class="form-group">
               <label for="vehicleReg">Registarski broj vozila</label>
               <input type="text" class="form-control" id="vehicleReg" [value]="ticket.vehicleReg" disabled>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
     </div>
-  </div>
+    </div>
+
 </div>

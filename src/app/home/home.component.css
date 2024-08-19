@@ -3,7 +3,7 @@
 }
 
 .carousel-item {
-  height: 600px; 
+  height: 100vh; 
   position: relative;
 }
 
