@@ -1,0 +1,8 @@
+{
+    "/api":{
+        "target":"http://benjaminramovic-001-site1.htempurl.com",
+        "secure":false,
+        "changeOrigin":true,
+        "logLevel":"debug"
+    }
+}

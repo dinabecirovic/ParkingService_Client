@@ -32,7 +32,7 @@ export class LoginnComponent {
   this.service.login(credentials).subscribe(res => {
     if(res && res.token){
       localStorage.setItem("token",res.token);
-      localStorage.setItem("role",res.user.role);
+      localStorage.setItem("role",res.user.Role);
       this.service.getVehicleOfUser(res.user.id).subscribe(
         res => {
           console.log(res)

@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:5001/api/Auth/register';
-  private url2 = 'http://localhost:5001/vehicleof/';
+  private baseUrl = 'http://parkeasyproject.somee.com/api/Auth/register';
+  private url2 = 'http://parkeasyproject.somee.com/vehicleof/';
 
   constructor(private http: HttpClient) {}
 
@@ -25,11 +25,11 @@ export class AuthService {
     localStorage.removeItem("vehicle");
   }
   getVehicleOfUser(id:string):Observable<any>{
-    return this.http.get("http://localhost:5001/vehicleofuser/"+id);
+    return this.http.get("http://parkeasyproject.somee.com/vehicleofuser/"+id);
   }
 
   login(user: any) {
-    return this.http.post<any>(`http://localhost:5001/api/Auth/login`, user, {
+    return this.http.post<any>(`http://parkeasyproject.somee.com/api/Auth/login`, user, {
       "headers":new HttpHeaders()
                 .set("Content-type", "application/json")
                 .set("Access-Control-Allow-Origin", "*")
@@ -39,9 +39,17 @@ export class AuthService {
   getVehicle(id:string){
     return this.http.get(this.url2+id);
   }
+  /*http://benjaminramovic-001-site1.htempurl.com/api/Zone */
+  proba(){
+    return this.http.get("http://parkeasyproject.somee.com/api/Zone", {
+      "headers": new HttpHeaders()
+      .set("Content-type", "application/json")
+      .set("Access-Control-Allow-Origin", "*")
+    })
+  }
 
   register_user(user: any) {
-    return this.http.post<any>(`http://localhost:5001/api/Auth/register`, user, {
+    return this.http.post<any>(`http://parkeasyproject.somee.com/api/Auth/register`, user, {
       "headers":new HttpHeaders()
                 .set("Content-type", "application/json")
                 .set("Access-Control-Allow-Origin", "*")

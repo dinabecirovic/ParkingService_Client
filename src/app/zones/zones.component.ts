@@ -13,13 +13,15 @@ export class ZonesComponent implements OnInit {
   disp2:boolean = false;
   zoneU:any = {
   
-    name: "",
-    numberOfPlaces: 0
+    Name: "",
+    NumberOfPlaces: 0,
+    Address:""
   }
   zoneNew:any = {
   
-    name: "",
-    numberOfPlaces: 0
+    Name: "",
+    NumberOfPlaces: 0,
+    Address:""
   }
 
   constructor(private service:ParkingplacesService) {}

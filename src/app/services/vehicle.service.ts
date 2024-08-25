@@ -10,7 +10,7 @@ export class VehicleService {
   constructor(private http:HttpClient) { }
 
   getById(id:Number):Observable<any>{
-    return this.http.get("http://localhost:5001/api/Vehicle/"+id);
+    return this.http.get("http://parkeasyproject.somee.com/api/Vehicle/"+id);
   }
 
  

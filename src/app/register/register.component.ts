@@ -33,10 +33,10 @@ export class RegisterComponent {
       console.log(this.user);
       this.service.register_user(this.user).subscribe(res => {
         console.log(res);
+        this.router.navigate(['/login']);
 
       },
     error => console.log(error));
-    this.router.navigate(['/login']);
     } else {
       console.log("Form is invalid");
     }

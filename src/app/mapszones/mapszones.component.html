@@ -12,9 +12,9 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let item of zones" >
-                        <td scope="row">{{item.name}}</td>
-                        <td scope="row">{{item.numberOfPlaces}}</td>
-                        <td scope="row">{{item.numberOfPlaces - item.parkingPlaces.length}}</td>
+                        <td scope="row">{{item.Name}}</td>
+                        <td scope="row">{{item.NumberOfPlaces}}</td>
+                        <td scope="row">{{item.NumberOfPlaces - item.ParkingPlaces.length}}</td>
                         <td  scope="row"><button (click)='search(item,item.id)'>Pretraga</button></td>
                        
                     </tr>

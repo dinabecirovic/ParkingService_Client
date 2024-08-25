@@ -17,9 +17,10 @@ export class AppComponent implements OnInit {
   
 
   ngOnInit(): void {
-      if(localStorage.getItem("id")!= null) {
-        
-      }
+      this.s.proba().subscribe(
+        res =>console.log(res),
+        error => console.log(error)
+      )
         
   }
   logout(){

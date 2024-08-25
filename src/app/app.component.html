@@ -20,23 +20,26 @@
                 <a class="nav-link" href="">Početna</a>
             </li>
             <!-- USER -->
-            <li *ngIf="s.get_role() == 'User' || s.get_role() == 'Controllor'" class="nav-item">
+            <li *ngIf="s.get_role() == 'user' || s.get_role() == 'Controllor'" class="nav-item">
                 <a class="nav-link" href="/mapszones">Pretraga mesta</a>
             </li>
-            <li *ngIf="s.get_role() == 'User'"> 
+            <li *ngIf="s.get_role() == 'user'"> 
             <a  class="nav-link" routerLink="/ticket-list" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Moje Karte</a>
             </li>
-            <li *ngIf="s.get_role() == 'User'" class="nav-item">
+            <li *ngIf="s.get_role() == 'user'" class="nav-item">
                 <a class="nav-link" routerLink="/penalty" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Moje kazne</a>
             </li>
             <!-- END USER -->
 
             <!-- CONTROLLOR -->
-            <li *ngIf="s.get_role() == 'Controllor'" class="nav-item">
+            <li *ngIf="s.get_role() == 'controller'" class="nav-item">
                 <a class="nav-link" routerLink="/penalty" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Kontrola parkinga</a>
             </li>
-            <li *ngIf="s.get_role() == 'Controllor'" class="nav-item">
+            <li *ngIf="s.get_role() == 'controller'" class="nav-item">
                 <a class="nav-link" routerLink="/controller-penalties" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Izdate kazne</a>
+            </li>
+            <li *ngIf="s.get_role() == 'controller'" class="nav-item">
+                <a class="nav-link" routerLink="/search" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Pretraga vozila</a>
             </li>
             <!-- END CONTROLLOR -->
 

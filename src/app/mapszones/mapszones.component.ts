@@ -59,13 +59,11 @@ export class MapszonesComponent implements AfterViewInit {
       console.log(err);
     })
   }
+
   getZones(){
     this.service.getAllZones().subscribe(res => {
       console.log(res);
       this.zones = res;
-    
-      
-
     },
     err => {
       console.log(err);
