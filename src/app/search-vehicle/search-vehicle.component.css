@@ -21,4 +21,10 @@ label {
     margin-top: 10px;
     float: right;
 }
-  
+h3 {
+    margin-top: 15px;
+    text-align: left;
+    color: #007bff; 
+    margin-bottom: 20px; 
+    font-weight: 700;
+  }

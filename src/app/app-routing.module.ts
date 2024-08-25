@@ -17,6 +17,7 @@ import { ZonesComponent } from './zones/zones.component';
 import { PenaltiesComponent } from './penalties/penalties.component';
 import { ControllerPenaltiesComponent } from './controller-penalties/controller-penalties.component';
 import { VehicleFormComponent } from './vehicle-form/vehicle-form.component';
+import { TicketInputComponent } from './ticket-input/ticket-input.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: 'penalties', component: PenaltiesComponent },
   { path: 'controller-penalties', component: ControllerPenaltiesComponent },
   { path: 'vehicle-form', component: VehicleFormComponent },
+  { path: 'ticket-input', component: TicketInputComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

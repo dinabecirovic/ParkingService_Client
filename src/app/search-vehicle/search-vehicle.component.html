@@ -1,8 +1,8 @@
 <div class="container">
-    <h2>Pretraga po registarskom broju</h2>
+    <h3>Pretraga vozila</h3>
     <form (ngSubmit)="searchVehicle()">
       <div class="form-group">
-        <label for="registrationNumber">Registarski broj:</label>
+        <label for="registrationNumber">Registarski broj</label>
         <input type="text" id="registrationNumber" [(ngModel)]="registrationNumber" name="registrationNumber" class="form-control" required>
       </div>
       <button type="submit" class="btn btn-primary">Pretraži</button>
