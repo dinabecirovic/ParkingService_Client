@@ -1,28 +1,22 @@
-<form [formGroup]="vehicleForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="mark">Marka:</label>
-      <input type="text" id="mark" formControlName="mark" class="form-control">
-      <div *ngIf="vehicleForm.get('mark')?.invalid && vehicleForm.get('mark')?.touched" class="text-danger">
-        Marka vozila je obavezno polje.
+<h3>Unesite podatke o Vašem vozilu</h3>
+<div class="form-container">
+    <form [formGroup]="vehicleForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="mark">Marka</label>
+        <input type="text" id="mark" formControlName="mark" class="form-control">
       </div>
-    </div>
   
-    <div class="form-group">
-      <label for="name">Ime:</label>
-      <input type="text" id="name" formControlName="name" class="form-control">
-      <div *ngIf="vehicleForm.get('name')?.invalid && vehicleForm.get('name')?.touched" class="text-danger">
-        Naziv vozila je obavezno polje.
+      <div class="form-group">
+        <label for="name">Ime</label>
+        <input type="text" id="name" formControlName="name" class="form-control">
       </div>
-    </div>
   
-    <div class="form-group">
-      <label for="regNumber">Registarski broj:</label>
-      <input type="text" name="regNumber" formControlName="regNumber" class="form-control">
-      <div *ngIf="vehicleForm.get('regNumber')?.invalid && vehicleForm.get('regNumber')?.touched" class="text-danger">
-        Registarski broj vozila je obavezno polje.
+      <div class="form-group">
+        <label for="regNumber">Registarski broj</label>
+        <input type="text" id="regNumber" formControlName="regNumber" class="form-control">
       </div>
-    </div>
   
-    <button type="submit" class="btn btn-primary" [disabled]="vehicleForm.invalid">Potvrdi</button>
-</form>
+      <button type="submit" class="btn btn-primary">Potvrdi</button>
+    </form>
+</div>
   

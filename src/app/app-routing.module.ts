@@ -16,6 +16,7 @@ import { ControllersComponent } from './controllers/controllers.component';
 import { ZonesComponent } from './zones/zones.component';
 import { PenaltiesComponent } from './penalties/penalties.component';
 import { ControllerPenaltiesComponent } from './controller-penalties/controller-penalties.component';
+import { VehicleFormComponent } from './vehicle-form/vehicle-form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'zones', component: ZonesComponent },
   { path: 'penalties', component: PenaltiesComponent },
   { path: 'controller-penalties', component: ControllerPenaltiesComponent },
+  { path: 'vehicle-form', component: VehicleFormComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
