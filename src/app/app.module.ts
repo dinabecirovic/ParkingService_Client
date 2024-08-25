@@ -23,6 +23,7 @@ import { ZonesComponent } from './zones/zones.component';
 import { PenaltiesComponent } from './penalties/penalties.component';
 import { ControllerPenaltiesComponent } from './controller-penalties/controller-penalties.component';
 import { AddvehicleComponent } from './addvehicle/addvehicle.component';
+import { VehicleFormComponent } from './vehicle-form/vehicle-form.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { AddvehicleComponent } from './addvehicle/addvehicle.component';
     PenaltiesComponent,
     ControllerPenaltiesComponent,
     PenaltiesComponent,
-    AddvehicleComponent
+    AddvehicleComponent,
+    VehicleFormComponent
   
   ],
   imports: [
