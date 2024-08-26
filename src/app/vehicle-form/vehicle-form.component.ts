@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { VehicleService } from '../services/vehicle.service';
 
 @Component({
   selector: 'app-vehicle-form',
@@ -8,8 +9,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class VehicleFormComponent implements OnInit {
   vehicleForm: FormGroup;
+  vehicle:any = {
+    Mark:"",
+    Name:"",
+    RegNumber:"",
+    UserId:""
+  }
+  isCorrect:boolean = false
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private vs:VehicleService) {
     this.vehicleForm = this.fb.group({
       mark: ['', Validators.required],
       name: ['', Validators.required],
@@ -17,11 +25,18 @@ export class VehicleFormComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.vehicle.UserId = localStorage.getItem("id");
+  }
 
   onSubmit(): void {
-    if (this.vehicleForm.valid) {
-      console.log('Vehicle Data:', this.vehicleForm.value);
+    this.vs.add(this.vehicle).subscribe(
+      res => {
+        console.log(res)
+        this.isCorrect = true
+      },
+      err => console.log(err)
+    )
     }
-  }
+  
 }

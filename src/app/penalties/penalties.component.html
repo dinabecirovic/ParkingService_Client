@@ -3,27 +3,27 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Datum</th>
+          <th>Datum i vreme</th>
           <th>Cena</th>
           <th>Vozilo</th>
-          <th>Napomena</th>
           <th>Razlog</th>
-          <th>Izmeni</th>
-          <th>Izbriši</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let penalty of penalties">
-          <td>{{ penalty.date }}</td>
-          <td>{{ penalty.amount }}</td>
-          <td>{{ penalty.vehicle }}</td>
-          <td>{{ penalty.note }}</td>
-          <td>{{ penalty.reason }}</td>
+          <td>{{ penalty.DateTime }}</td>
+          <td>{{ penalty.Price }}</td>
+          <td>{{ penalty.VehicleId }}</td>
+          <td>{{ penalty.Why }}</td>
+          <td *ngIf="penalty.Reason!=''">{{penalty.Reason}}</td>
+          <td *ngIf="penalty.Reason=='' && set==penalty.Id"><input [(ngModel)]="reason" type="text" class="form-control" placeholder="Razlog skidanja kazne"></td>
+          
           <td>
-            <button class="btn btn-warning btn-sm" (click)="editPenalty(penalty)">Izmeni</button>
+            <button *ngIf="penalty.Reason=='' && set!=penalty.Id" class="btn btn-danger btn-sm" (click)="delete(penalty.Id)">Skini kaznu</button>
+            <button *ngIf="set==penalty.Id" class="btn btn-danger btn-sm" (click)="deletePenalty(penalty.Id)">Potvrdi</button>
           </td>
           <td>
-            <button class="btn btn-danger btn-sm" (click)="deletePenalty(penalty)">Izbriši</button>
+            <button *ngIf="set==penalty.Id" class="btn btn-light btn-sm" (click)="cancel()">Odustani</button>
           </td>
         </tr>
       </tbody>

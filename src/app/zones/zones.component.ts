@@ -34,13 +34,16 @@ export class ZonesComponent implements OnInit {
   }
   addZone(zone:any){
     this.service.addZone(zone).subscribe(
-      res => console.log(res),
+      res => {
+        console.log(res)
+        this.zones.push(res)
+      },
       err => console.log(err)
     )
   }
 
   editZone(id:number, zone: any) {
-    this.zone = zone;
+    this.zoneU = zone;
     this.disp = !this.disp;
 
   /* const name = prompt('Unesite novi naziv za zonu:', zone.name);
@@ -60,9 +63,12 @@ export class ZonesComponent implements OnInit {
     )
   }
 
-  deleteZone(zone: any) {
-    this.service.deleteZone(zone.id).subscribe(
-      res => console.log(res),
+  deleteZone(id: number) {
+    this.service.deleteZone(id).subscribe(
+      res =>{ 
+         console.log(res)
+         this.zones = this.zones.filter(z => z.Id != id)
+      },
       err => console.log(err)
     );
   }

@@ -1,16 +1,20 @@
 <!-- zone-details.component.html -->
 <div class="container mt-5">
+  <div *ngIf="isCorrect" class="alert alert-success">
+    <strong>Uspesna rezervacija!</strong>
+  </div>
   <div class="zone-details text-center">
-    <h2>{{ zone.name }}</h2>
-    <p class="lead">Broj parking mesta: {{ zone.numberOfPlaces }}</p>
+    <h2>{{ zone.Name }}</h2>
+    <p class="lead">Broj parking mesta: {{ zone.NumberOfPlaces }}</p>
   
     <h3 class="mt-4">Parking mesta:</h3>
     <ul class="list-group parking-list mt-3">
-      <li *ngFor="let place of zone.parkingPlaces" class="list-group-item">
+      <li *ngFor="let place of zone.ParkingPlaces" class="list-group-item">
         <div class="parking-place">
-          <h4>{{ place.name }}</h4>
-          <p>{{place.street}}</p>
-          <p><button class="btn btn-primary mb-3" (click)="reserve()">Rezervisi</button></p>
+          <h4>{{ place.Name }}</h4>
+          <p>{{place.Street}}</p>
+          <p *ngIf="!isReserved"><button class="btn btn-primary mb-3" (click)="reserve(place.Id)">Rezervisi</button></p>
+          <p *ngIf="isReserved">REZERVISANO</p>
         </div>
       </li>
     </ul>

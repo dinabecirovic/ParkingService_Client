@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ParkingplacesService } from '../parkingplaces.service';
 import { VehicleService } from '../services/vehicle.service';
 
@@ -9,8 +10,10 @@ import { VehicleService } from '../services/vehicle.service';
 })
 export class PenaltyComponent implements OnInit {
  
-  constructor(private service:ParkingplacesService, private vserv:VehicleService){
+  constructor(private service:ParkingplacesService, private vserv:VehicleService, private route:ActivatedRoute){
   }
+
+  vehicleId:number=0
   vehicle:any = {
     regNumber:String,
     mark:String,
@@ -19,7 +22,8 @@ export class PenaltyComponent implements OnInit {
  penalties:any[] = [];
   ngOnInit(): void {
     
-    
+        this.vehicleId = +this.route.snapshot.paramMap.get('id')!;
+
     const vid = localStorage.getItem("vid");
     const vidNumber = vid !== null ? parseInt(vid) : null;
 
@@ -27,11 +31,11 @@ export class PenaltyComponent implements OnInit {
       this.vserv.getById(vidNumber).subscribe(
         res => {
           console.log(res);
-          this.penalties = res.penalties;
+          this.penalties = res.Penalties;
           this.vehicle = {
-            regNumber:res.regNumber,
-            mark:res.mark,
-            name:res.name,
+            regNumber:res.RegNumber,
+            mark:res.Mark,
+            name:res.Name,
           }
         },
         err => console.log(err)

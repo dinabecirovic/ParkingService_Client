@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { User } from '../user';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { EmailService } from '../services/email.service';
 
 @Component({
   selector: 'app-register',
@@ -22,9 +23,13 @@ export class RegisterComponent {
     role:""
   }
 
-  constructor(private service: AuthService, private router: Router) {}
+  constructor(private service: AuthService, private router: Router, private emailService:EmailService) {}
 
   ngOnInit(): void {}
+ generateRandomSixDigitNumber(): number {
+    // Generiše nasumičan broj između 100000 i 999999
+    return Math.floor(100000 + Math.random() * 900000);
+  }
 
   register() {
     //alert(this.user.role)
@@ -41,4 +46,5 @@ export class RegisterComponent {
       console.log("Form is invalid");
     }
   }
+  
 }

@@ -2,7 +2,7 @@
 <div class="container mt-5">
   <!-- Vehicle Info -->
   <div class="vehicle-info mb-5">
-    <h2>Podaci o mom vozilu</h2>
+    <h2>Moje vozilo </h2>
     <p><strong>Registracija:</strong> {{ vehicle.regNumber }}</p>
     <p><strong>Marka:</strong> {{ vehicle.mark }}</p>
     <p><strong>Naziv:</strong> {{ vehicle.name }}</p>
@@ -22,8 +22,8 @@
       </thead>
       <tbody>
         <tr *ngFor="let penalty of penalties">
-          <td>{{ penalty.dateTime }}</td>
-          <td>{{ penalty.why }}</td>
+          <td>{{ penalty.DateTime }}</td>
+          <td>{{ penalty.Why }}</td>
         </tr>
       </tbody>
     </table>

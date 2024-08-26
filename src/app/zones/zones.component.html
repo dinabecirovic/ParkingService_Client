@@ -17,10 +17,10 @@
           <td>{{ zone.NumberOfPlaces }}</td>
           <td>{{ zone.Address }}</td>
           <td>
-            <button class="btn btn-warning btn-sm" (click)="editZone(zone.id,zone)">Izmeni</button>
+            <button class="btn btn-warning btn-sm" (click)="editZone(zone.Id,zone)">Izmeni</button>
           </td>
           <td>
-            <button class="btn btn-danger btn-sm" (click)="deleteZone(zone)">Izbriši</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteZone(zone.Id)">Izbriši</button>
           </td>
         </tr>
       </tbody>
@@ -47,7 +47,7 @@
       <input type="text" class="form-control" id="address" name="address" required
              [(ngModel)]="zoneU.Address" #numberOfPlaces="ngModel">
     </div>
-    <button  class="btn btn-primary" (click)="edit(zone.id,zoneU)">Sačuvaj</button>
+    <button  class="btn btn-primary" (click)="edit(zoneU.Id,zoneU)">Sačuvaj</button>
   </form>
 </div>
 <div class="container2" id="editcont" *ngIf="disp2">

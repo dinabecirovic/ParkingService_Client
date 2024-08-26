@@ -9,6 +9,8 @@
 .btn {
     display: inline-block;
     margin-top: 10px;
+    margin-bottom: 50px;
+
 }
 h2 {
     margin-bottom: 10px;
@@ -28,3 +30,13 @@ h3 {
     margin-bottom: 20px; 
     font-weight: 700;
   }
+  .card {
+      background-color: rgb(216, 213, 213);
+      width: 100%;
+      border-radius: 25px;
+      padding: 1rem 2rem;
+      
+      
+  }
+  #vazeca { background-color: rgb(179, 223, 179); padding: 1.2rem; border-radius: 30px;}
+  #istekla { background-color: rgb(226, 158, 158); padding: 1.2rem; border-radius: 30px;}

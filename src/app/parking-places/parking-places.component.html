@@ -1,27 +1,51 @@
 <div class="container">
     <h2>Parking mesta</h2>
-    <button class="btn btn-primary mb-3" (click)="addParkingPlace()">Dodaj novo parking mesto</button>
+    <button class="btn btn-primary mb-3" (click)="set()">Dodaj novo parking mesto</button>
     <table class="table table-striped">
       <thead>
         <tr>
           <th>Adresa</th>
-          <th>Zona</th>
+          <th>Broj zone</th>
           <th>Izmeni</th>
           <th>Izbriši</th>
         </tr>
       </thead>
       <tbody>
+        
         <tr *ngFor="let place of parkingPlaces">
-          <td>{{ place.address }}</td>
-          <td>{{ place.zone }}</td>
+          <td>{{ place.Street }}</td>
+          <td>{{ place.ZoneId }}</td>
           <td>
             <button class="btn btn-warning btn-sm" (click)="editParkingPlace(place)">Izmeni</button>
           </td>
           <td>
-            <button class="btn btn-danger btn-sm" (click)="deleteParkingPlace(place)">Izbriši</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteParkingPlace(place.Id)">Izbriši</button>
           </td>
         </tr>
+
       </tbody>
     </table>
   </div>
-  
+  <div class="container2" id="editcont" *ngIf="disp2">
+    <h2>Unos zone</h2>
+    <form #zoneForm="ngForm">
+      <div class="form-group">
+        <label for="name">Adresa:</label>
+        <input type="text" class="form-control" id="name" name="name" required
+               [(ngModel)]="street" #name="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="numberOfPlaces">Zona:</label>
+        <select [(ngModel)]="selected" class="form-control mb-5" name="zone.Id" id="zone.Id">
+          <option *ngFor="let zone of zones" [value]="zone.Id">
+            {{zone.Id}}. {{zone.Name}}
+          </option>
+          
+        </select>
+        <!-- <input type="number" class="form-control" id="numberOfPlaces" name="numberOfPlaces" required
+               [(ngModel)]="pp.Zone" #numberOfPlaces="ngModel"> -->
+        
+      </div>
+      <button  class="btn btn-primary" (click)="addPp()">Dodaj</button>
+    </form>
+  </div>

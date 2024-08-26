@@ -18,6 +18,7 @@ import { PenaltiesComponent } from './penalties/penalties.component';
 import { ControllerPenaltiesComponent } from './controller-penalties/controller-penalties.component';
 import { VehicleFormComponent } from './vehicle-form/vehicle-form.component';
 import { TicketInputComponent } from './ticket-input/ticket-input.component';
+import { InputcodeComponent } from './inputcode/inputcode.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,11 +27,12 @@ const routes: Routes = [
   { path: 'user-navbar', component: UserNavbarComponent },
   { path: 'ticket-list', component: TicketListComponent },
   { path: 'penalty', component: PenaltyComponent },
+  { path: 'penalties', component: PenaltiesComponent },
   { path: 'mapszones', component: MapszonesComponent },
   { path: 'zone/:id', component: ZoneComponent },
   { path: 'error', component: ErrorComponent },
   { path: 'search-vehicle', component: SearchVehicleComponent },
-  { path: 'control-entry', component: ControlEntryComponent },
+  { path: 'control-entry/:id', component: ControlEntryComponent },
   { path: 'parking-places', component: ParkingPlacesComponent },
   { path: 'controllers', component: ControllersComponent },
   { path: 'zones', component: ZonesComponent },
@@ -38,6 +40,7 @@ const routes: Routes = [
   { path: 'controller-penalties', component: ControllerPenaltiesComponent },
   { path: 'vehicle-form', component: VehicleFormComponent },
   { path: 'ticket-input', component: TicketInputComponent },
+  { path: 'input-code/:code', component: InputcodeComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

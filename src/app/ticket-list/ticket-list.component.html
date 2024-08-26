@@ -20,11 +20,15 @@
             <div class="form-group">
               <label for="ticketNumber">Broj Karte</label>
               <!-- <input type="text" class="form-control" id="ticketNumber" [value]="ticket.id" disabled> -->
-              <p [(ngModel)]="ticket.id"></p>
+              <p>{{ticket.Code}}</p>
             </div>
             
             <div class="form-group">
-              <label for="validityDate">Datum važenja karte</label>
+              <label for="validityDate">Vazi do: </label>
+              <p>{{ticket.Period}}</p>
+
+              <p *ngIf="!isOk(ticket)" style="color: rgb(6, 245, 6); font-weight:bold;">VAZECA</p>
+              <p *ngIf="isOk(ticket)" style="color: rgb(247, 6, 6); font-weight:bold;">ISTEKLA</p>
               <!-- <input type="date" class="form-control" id="validityDate" [value]="ticket.validityDate" disabled> -->
             </div>
           </div>

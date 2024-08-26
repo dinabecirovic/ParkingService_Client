@@ -26,6 +26,7 @@ import { ControllerPenaltiesComponent } from './controller-penalties/controller-
 import { AddvehicleComponent } from './addvehicle/addvehicle.component';
 import { VehicleFormComponent } from './vehicle-form/vehicle-form.component';
 import { TicketInputComponent } from './ticket-input/ticket-input.component';
+import { InputcodeComponent } from './inputcode/inputcode.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { TicketInputComponent } from './ticket-input/ticket-input.component';
     AddvehicleComponent,
     VehicleFormComponent,
     TicketInputComponent,
+    InputcodeComponent,
   
   ],
   imports: [

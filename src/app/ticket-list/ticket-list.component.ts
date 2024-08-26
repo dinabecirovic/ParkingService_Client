@@ -8,18 +8,12 @@ import { VehicleService } from '../services/vehicle.service';
 })
 export class TicketListComponent implements OnInit {
   constructor(private service:VehicleService){}
-  tickets = [{
-    id:0
-  }
-    /* { number: '12345', zone: 'A1', validityDate: '2024-06-27' }, */
-  ];
+  tickets:any[] = []
 
-  subscriptionTickets = [{
-    id:0
-    /* { number: '54321', zone: 'A1', validityPeriod: '2024-06-27 to 2025-06-27', vehicleReg: 'BG12345' }, */
-  }];
+  subscriptionTickets:any[] =[]
 
   ngOnInit(): void {
+  
     const vid = localStorage.getItem("vid");
     const vidNumber = vid !== null ? parseInt(vid) : null;
 
@@ -27,8 +21,9 @@ export class TicketListComponent implements OnInit {
       this.service.getById(vidNumber).subscribe(
         res => {
           console.log(res);
-          this.tickets = res.oneOffCards;
-          this.subscriptionTickets = res.subscriptionCards;
+          this.tickets = res.OneOffCards;
+          this.subscriptionTickets = res.SubscriptionCards;
+          localStorage.setItem("vid",res.Id)
         },
         err => console.log(err)
       );
@@ -39,6 +34,12 @@ export class TicketListComponent implements OnInit {
   getPenalties() {
 
   }
+  isOk(c:any){
+    const currentDate = new Date();
+    const ticketExpiryDate = new Date(c.Period);
+    return ticketExpiryDate < currentDate;
+  }
+
 
   selectedType = 'one-time'; // Default is one-time ticket
 

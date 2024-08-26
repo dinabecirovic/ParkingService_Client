@@ -1,16 +1,35 @@
 <div class="container">
-    <h3>Pretraga vozila</h3>
-    <form (ngSubmit)="searchVehicle()">
-      <div class="form-group">
-        <label for="registrationNumber">Registarski broj</label>
-        <input type="text" id="registrationNumber" [(ngModel)]="registrationNumber" name="registrationNumber" class="form-control" required>
-      </div>
-      <button type="submit" class="btn btn-primary">Pretraži</button>
-    </form>
-    <div *ngIf="vehicleInfo">
-      <h3>Rezultati pretrage</h3>
-      <p>Vozilo: {{ vehicleInfo.registrationNumber }}</p>
-      <p>Karta: {{ vehicleInfo.hasTicket ? 'Ima kartu' : 'Nema kartu' }}</p>
+  <h3>Pretraga vozila</h3>
+  <form>
+    <div class="form-group">
+      <label for="registrationNumber">Registarski broj</label>
+      <input type="text" id="registrationNumber" [(ngModel)]="registrationNumber" name="registrationNumber" class="form-control" required (keyup)="searchVehicles()">
     </div>
+  </form>
+  <div *ngIf="vehicleInfo.length > 0" class="card mt-3">
+    <h3>Rezultati pretrage</h3>
+    <ul>
+      <li *ngFor="let vehicle of vehicleInfo" >
+        <p>Vozilo: {{ vehicle.RegNumber }}</p>
+        <div *ngIf="vehicle.OneOffCards!=0">
+        <p id="vazeca" *ngIf="!isExpired(vehicle.OneOffCards[0])">VAZECA JEDNOKRATNA KARTA</p>
+        
+        <div style="display:flex; justify-content:space-between;">
+        <p id="istekla" *ngIf="isExpired(vehicle.OneOffCards[0])">ISTEKLA JEDNOKRATNA KARTA</p>
+        <button class="btn btn-danger rounded-3" *ngIf="isExpired(vehicle.OneOffCards[0])" [routerLink]="['/control-entry', vehicle.Id]">Napisi kaznu</button>
+      </div>
+      </div>
+        <div *ngIf="vehicle.SubscriptionCards!=0">
+        <p id="vazeca" *ngIf="!isExpired(vehicle.SubscriptionCards[0])">VAZECA PRETPLATNA KARTA</p>
+        <div style="display:flex; justify-content:space-between;">
+          <p id="istekla" *ngIf="isExpired(vehicle.SubscriptionCards[0])">ISTEKLA PRETPLATNa KARTA</p>
+          <button class="btn btn-danger rounded-3" *ngIf="isExpired(vehicle.SubscriptionCards[0])" [routerLink]="['/control-entry', vehicle.Id]">Napisi kaznu</button>
+        </div>
+        </div>
+      </li>
+    </ul>
   </div>
-  
+  <div *ngIf="vehicleInfo.length === 0 && registrationNumber" class="card mt-3">
+    <p>Nema rezultata za uneti registracioni broj.</p>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ParkingplacesService } from '../parkingplaces.service';
+import { VehicleService } from '../services/vehicle.service';
 
 @Component({
   selector: 'app-zone',
@@ -9,17 +10,36 @@ import { ParkingplacesService } from '../parkingplaces.service';
 })
 export class ZoneComponent implements AfterViewInit,OnInit{
  zone:any = {};
-constructor(private service:ParkingplacesService, private router:ActivatedRoute){}
+ vid:any
+ isCorrect:boolean = false
+constructor(private service:ParkingplacesService, private router:ActivatedRoute, private vs:VehicleService){}
 ngOnInit(): void {
   
   this.zone = history.state.zone;
-    
+  this.vid = localStorage.getItem("vid")
 }
 ngAfterViewInit(): void {
    
    
   }
-  reserve(){
+  isReserved(place:any){
+    if(place.VehicleId != null) return true
+    return false
+  }
+  isMy(){
     
+  }
+  
+  reserve( pid:number){
+    this.vs.reserve(this.vid,pid).subscribe(
+      res =>{
+         console.log(res)
+         this.isCorrect = true
+         setTimeout(() => {
+           this.isCorrect = false
+         }, 2000);
+      },
+      err => console.log(err)
+    )
   }
 }

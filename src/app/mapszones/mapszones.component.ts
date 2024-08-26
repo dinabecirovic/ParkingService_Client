@@ -94,11 +94,11 @@ export class MapszonesComponent implements AfterViewInit {
   
   private addMarkersToMap(): void {
     const promises = this.parking_places.map(place => 
-      this.geocodeAddress(place.street).then((latLng) => {
+      this.geocodeAddress(place.Street).then((latLng) => {
         if (latLng) {
           const marker = L.marker(latLng);
-          marker.setPopupContent(place.street);
-          marker.bindPopup(`<div>${place.street}</div><div>${this.zones.find(z=>z.id==place.zoneId).name}</div>`,{
+          marker.setPopupContent(place.Street);
+          marker.bindPopup(`<div>${place.Street}</div><div>${this.zones.find(z=>z.Id==place.ZoneId).Name}</div>`,{
             autoClose:false,
             
           });

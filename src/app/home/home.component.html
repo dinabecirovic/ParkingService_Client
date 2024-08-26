@@ -1,5 +1,21 @@
 <div class="container">
+  <div *ngIf="isUser()">
+  <h3>Unesite broj karte</h3>
+          <form>
+            <div class="form-group">
+              <label for="registrationNumber">Jednokratna karta</label>
+              <input [(ngModel)]="ooCard.Code" type="text" id="registrationNumber" name="registrationNumber" class="form-control" required >
+              <button (click)="addOCard()" class="btn btn-primary">Submit</button>
+            </div>
+            <div class="form-group">
+              <label for="registrationNumber">Pretplatna karta</label>
+              <input [(ngModel)]="ssCard.Code" type="text" id="registrationNumber"  name="registrationNumber" class="form-control" required >
+              <button (click)="addSCard()" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+   
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -11,6 +27,7 @@
         <div class="carousel-caption d-none d-md-block">
           <h1><b>ParkEasy</b></h1>
           <p><b>Pronađite idealno mesto za parkiranje <br> u svakom trenutku.</b></p>
+          
         </div>
       </div>
       <div class="carousel-item">

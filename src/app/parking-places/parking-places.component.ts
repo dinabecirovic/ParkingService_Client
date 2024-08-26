@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ParkingplacesService } from '../parkingplaces.service';
 
 @Component({
   selector: 'app-parking-places',
@@ -6,14 +7,46 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parking-places.component.css']
 })
 export class ParkingPlacesComponent implements OnInit {
-  parkingPlaces = [
-    { id: 1, address: 'Adresa 1', zone: 'Zona 1' },
-    { id: 2, address: 'Adresa 2', zone: 'Zona 2' },
+  parkingPlaces:any[] = [
   ];
+  disp2:boolean = false;
+  street:string = ""
+  zones:any[] = []
+  selected:number=0
+  /**
+   *
+   */
 
-  constructor() {}
 
-  ngOnInit(): void {}
+  constructor(private zs:ParkingplacesService) {}
+  
+
+  getAllZones(){
+    this.zs.getAllZones().subscribe(
+      res => {
+        this.zones = res
+        console.log(res)
+
+      },
+      err => console.log(err)
+    )
+  }
+  getAllParkings() {
+    this.zs.getAllParkings().subscribe(
+      res => { 
+        this.parkingPlaces = res
+        console.log(res)
+
+      },
+      err => console.log(err)
+
+    )
+  }
+  ngOnInit(): void {
+this.getAllZones()
+this.getAllParkings()
+
+  }
 
   addParkingPlace() {
     const newAddress = prompt('Unesite adresu za novo parking mesto:');
@@ -22,6 +55,22 @@ export class ParkingPlacesComponent implements OnInit {
       const newPlace = { id: this.parkingPlaces.length + 1, address: newAddress, zone: newZone };
       this.parkingPlaces.push(newPlace);
     }
+  }
+  set(){
+    this.disp2 = true
+  }
+  alert(){
+    alert(this.selected.toString())
+  }
+  addPp(){
+    this.zs.addParking({Street:this.street,Status:"SLOBODNO",ZoneId:this.selected}).subscribe(
+      res =>{
+         console.log(res)
+         this.parkingPlaces.push(res)
+         this.disp2=false
+      },
+      err => console.log(err)
+    )
   }
 
   editParkingPlace(place: any) {
@@ -33,10 +82,13 @@ export class ParkingPlacesComponent implements OnInit {
     }
   }
 
-  deleteParkingPlace(place: any) {
-    const index = this.parkingPlaces.indexOf(place);
-    if (index > -1) {
-      this.parkingPlaces.splice(index, 1);
-    }
+  deleteParkingPlace(placeId: number) {
+   this.zs.deletePp(placeId).subscribe(
+     res => {
+       console.log(res)
+       this.parkingPlaces = this.parkingPlaces.filter(p => p.Id != placeId)
+     },
+     err => console.log(err)
+   )
   }
 }

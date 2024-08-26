@@ -30,6 +30,7 @@
     font-size: 1rem;
     color: #6c757d;
   }
-  .parking-place button{
-      
+  
+  .alert {
+    transition: 1.2s;
   }
